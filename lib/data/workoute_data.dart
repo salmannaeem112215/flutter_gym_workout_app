@@ -1,7 +1,9 @@
-import 'package:flutter_gym_workout_app/models/workout.dart';
-import '../models/excercise.dart';
+import 'package:flutter/material.dart';
 
-class WorkoutData {
+import '../models/excercise.dart';
+import '../models/workout.dart';
+
+class WorkoutData extends ChangeNotifier {
   /*
     WORKOUT DATA STRUCTURE
 
@@ -33,6 +35,7 @@ class WorkoutData {
   // Add a Workout
   void addWorkout(String name) {
     workouts.add(Workout(name: name, excercises: []));
+    notifyListeners();
   }
 
   // Add an Excercise to a Workout
@@ -44,6 +47,7 @@ class WorkoutData {
     // Add workout in Relevant Excercise
     relevantWorkout.excercises.add(
         Excercise(name: excerciseName, weight: weight, reps: reps, sets: sets));
+    notifyListeners();
   }
 
   // Check off excercise
@@ -52,6 +56,7 @@ class WorkoutData {
         getRelevantExcercise(workoutName, excerciseName);
 
     relevantExcercise.isCompleted = !relevantExcercise.isCompleted;
+    notifyListeners();
   }
 
   // get length of a given workout
