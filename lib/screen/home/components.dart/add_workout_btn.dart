@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../data/workoute_data.dart';
+import '../../../data/workout_data.dart';
 
 class AddWorkOutButton extends StatelessWidget {
   AddWorkOutButton({super.key, required this.ctx});

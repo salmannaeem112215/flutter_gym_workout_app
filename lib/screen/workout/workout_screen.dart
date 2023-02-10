@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './components/body.dart';
+import './components/add_excercise_btn.dart';
 
 class WorkoutScreen extends StatelessWidget {
   static String routeName = "/workout";
@@ -14,7 +15,12 @@ class WorkoutScreen extends StatelessWidget {
         title: Text(args.name),
         centerTitle: true,
       ),
-      body: const Body(),
+      body: Body(
+        workoutName: args.name,
+      ),
+      floatingActionButton: AddExcerciseButton(
+        workoutName: args.name,
+      ),
     );
   }
 }

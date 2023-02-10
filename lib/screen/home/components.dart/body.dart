@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gym_workout_app/screen/home/components.dart/workout_list.dart';
 import 'package:provider/provider.dart';
 
-import 'package:flutter_gym_workout_app/data/workoute_data.dart';
+import 'package:flutter_gym_workout_app/screen/home/components.dart/workout_tile.dart';
+import 'package:flutter_gym_workout_app/data/workout_data.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -10,9 +10,11 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<WorkoutData>(
-      builder: (context, value, child) {
-        return WorkoutList(workouts: value.workouts);
-      },
+      builder: (context, value, child) => ListView.builder(
+        itemCount: value.workouts.length,
+        itemBuilder: (context, index) =>
+            WorkoutTile(workoutName: value.workouts[index].name),
+      ),
     );
   }
 }

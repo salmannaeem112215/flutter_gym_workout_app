@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gym_workout_app/data/workoute_data.dart';
+import 'package:flutter_gym_workout_app/data/workout_data.dart';
 import 'package:flutter_gym_workout_app/routes.dart';
 import 'package:flutter_gym_workout_app/screen/home/home.dart';
 import 'package:provider/provider.dart';

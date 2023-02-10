@@ -23,6 +23,23 @@ class WorkoutData extends ChangeNotifier {
           sets: '12',
           weight: '32',
         ),
+        Excercise(
+          name: 'Shumaling Jacks',
+          reps: '3',
+          sets: '12',
+          weight: '32',
+        ),
+      ],
+    ),
+    Workout(
+      name: 'Lower Body',
+      excercises: [
+        Excercise(
+          name: 'Jumping Jacks',
+          reps: '3',
+          sets: '12',
+          weight: '32',
+        ),
       ],
     ),
   ];
@@ -39,8 +56,13 @@ class WorkoutData extends ChangeNotifier {
   }
 
   // Add an Excercise to a Workout
-  void addExcercise(String workoutName, String excerciseName, String reps,
-      String sets, String weight) {
+  void addExcercise({
+    required String workoutName,
+    required String excerciseName,
+    required String reps,
+    required String sets,
+    required String weight,
+  }) {
     // get Releveant Wrokout ..
     Workout relevantWorkout =
         workouts.firstWhere((element) => element.name == workoutName);
